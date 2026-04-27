@@ -24,3 +24,5 @@ Last updated: 2026-04-19 23:48:20 CEST
 ### Personal Notes (fork)
 
 <!-- Personal note: I hit the client-not-enrolled error myself before finding the Pay-per-use fix above. Leaving this note as a reminder that Free tier apps cannot read `/2/tweets` even with a valid OAuth2 token — the app environment must be set to Production in the developer portal. -->
+
+<!-- Personal note: The default OAuth2 callback port (8080) conflicts with several local dev servers I run regularly (e.g. various Docker services). As a workaround I keep `REDIRECT_URI=http://localhost:9727/callback` set in my shell profile so xurl always uses port 9727, which is reliably free on my machine. Worth remembering if the auth flow silently hangs — check for port conflicts first. -->
